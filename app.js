@@ -33,3 +33,99 @@ const render = require("./lib/htmlRenderer");
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+const managerQs = [
+    {
+    type: 'input',
+    name: 'name',
+    message: 'What is your name?'
+    },
+    {
+    type: 'input',
+    name: 'id',
+    message: 'What is your id?'
+    },
+    {
+    type: 'input',
+    name: 'email',
+    message: 'What is your email?'
+    },
+    {
+    type: 'input',
+    name: 'officeNumber',
+    message: 'What is your office number?'
+    }
+]
+
+const engineerQs = [
+    {
+    type: 'input',
+    name: 'name',
+    message: 'What is your name?'
+    },
+    {
+    type: 'input',
+    name: 'id',
+    message: 'What is your id?'
+    },
+    {
+    type: 'input',
+    name: 'email',
+    message: 'What is your email?'
+    },
+    {
+    type: 'input',
+    name: 'github',
+    message: 'What is your gitHub?'
+    }
+]
+
+const internQs = [
+    {
+    type: 'input',
+    name: 'name',
+    message: 'What is your name?'
+    },
+    {
+    type: 'input',
+    name: 'id',
+    message: 'What is your id?'
+    },
+    {
+    type: 'input',
+    name: 'email',
+    message: 'What is your email?'
+    },
+    {
+    type: 'input',
+    name: 'school',
+    message: 'What is your school?'
+    }
+]
+
+
+
+inquirer.prompt( 
+    {
+    type: 'list',
+    name: 'role',
+    message: 'Choose your role: ',
+    choices: ['Manager', 'Engineer', 'Intern']
+    }
+)
+.then(function(data){
+    if(data.role === 'Manager'){
+        console.log('You chose: ', data.role);
+        inquirer.prompt(managerQs);
+    }
+    if(data.role === 'Engineer'){
+        console.log('You chose: ', data.role);
+        inquirer.prompt(engineerQs);
+
+    }
+    if(data.role === 'Intern'){
+        console.log('You chose: ', data.role);
+        inquirer.prompt(internQs);
+
+    }
+})
+
