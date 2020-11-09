@@ -33,6 +33,8 @@ const render = require("./lib/htmlRenderer");
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+const employeeList = [];
+
 const managerQs = [
     {
     type: 'input',
@@ -102,8 +104,6 @@ const internQs = [
     }
 ]
 
-
-
 inquirer.prompt( 
     {
     type: 'list',
@@ -115,7 +115,11 @@ inquirer.prompt(
 .then(function(data){
     if(data.role === 'Manager'){
         console.log('You chose: ', data.role);
-        inquirer.prompt(managerQs);
+        inquirer.prompt(managerQs).then(function(response){
+            employeeList.push(response);
+            console.log(employeeList);
+        })
+        // console.log(employeeList);
     }
     if(data.role === 'Engineer'){
         console.log('You chose: ', data.role);
