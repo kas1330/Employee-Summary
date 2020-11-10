@@ -103,6 +103,11 @@ function createTeam(){
         
         console.log('questions are done ', answer);
         employeeList.push(answer);
+        if(answer.addPerson === 'Yes'){
+            createTeam();
+        }
+
+        console.log(employeeList);
     })
 }
 
