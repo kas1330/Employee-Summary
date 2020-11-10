@@ -100,14 +100,22 @@ function createTeam(){
     inquirer.prompt(employeeQs)
 
     .then(function(answer){
-        
+        createObject(answer);
         // console.log('questions are done ', answer);
         // employeeList.push(answer);
-        if(answer.role === 'Manager'){
-            var newPerson = new Manager(answer.name, answer.id, answer.email, answer.officeNumber);
-            employeeList.push(newPerson);
-        }
-        else if(answer.addPerson === 'Yes'){
+        // if(answer.role === 'Manager'){
+        //     var newPerson = new Manager(answer.name, answer.id, answer.email, answer.officeNumber);
+        //     employeeList.push(newPerson);
+        // }
+        // else if(answer.role === 'Engineer'){
+        //     var newPerson = new Engineer(answer.name, answer.id, answer.email, answer.github);
+        //     employeeList.push(newPerson);
+        // }
+        // else if(answer.role === 'Intern'){
+        //     var newPerson = new Intern(answer.name, answer.id, answer.email, answer.school);
+        //     employeeList.push(newPerson);
+        // }
+        if(answer.addPerson === 'Yes'){
             createTeam();
         }
         // console.log(employeeList);
@@ -116,6 +124,24 @@ function createTeam(){
     //Passing it an array of objects, I think the render function does employeeList[0].getRole() and that's why it's not working
     const renderVar = render(employeeList);
 
+}
+
+function createObject(answer){
+    if(answer.role === 'Manager'){
+        var newPerson = new Manager(answer.name, answer.id, answer.email, answer.officeNumber);
+        employeeList.push(newPerson);
+    }
+    else if(answer.role === 'Engineer'){
+        var newPerson = new Engineer(answer.name, answer.id, answer.email, answer.github);
+        employeeList.push(newPerson);
+    }
+    else if(answer.role === 'Intern'){
+        var newPerson = new Intern(answer.name, answer.id, answer.email, answer.school);
+        employeeList.push(newPerson);
+    }
+    console.log(employeeList);
+
+    return;
 }
 
 
