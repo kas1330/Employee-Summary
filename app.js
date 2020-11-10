@@ -37,6 +37,7 @@ const { choices } = require("yargs");
 
 //Empty array, employees are to be added to it as their info is added
 const employeeList = [];
+const renderVar;
 
 //All questions
 const employeeQs = [
@@ -118,8 +119,9 @@ function createTeam(){
         if(answer.addPerson === 'Yes'){
             createTeam();
         }
-        const renderVar = render(employeeList);
+        renderVar = render(employeeList);
         console.log('Inside create team, after renderVar');
+        writeToFile('employeeFile.html', renderVar);
 
         // console.log(employeeList);
         // console.log('Broke out of the if statement');
@@ -146,6 +148,16 @@ function createObject(answer){
     console.log(employeeList);
 
     return;
+}
+
+function writeToFile(fileName, data) {
+    console.log('in writefile');
+      fs.writeFile(fileName, data, function(err) {
+          if(err){
+            return console.log('There was an error when trying to write the file.');
+          }
+          console.log('File successfully written.');
+      } )
 }
 
 
