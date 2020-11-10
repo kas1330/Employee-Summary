@@ -126,17 +126,25 @@ const employeeQs = [
     name: 'email',
     message: 'What is your email?'
     },
+    {
+        when: answer => {
+            return answer.role === 'Manager'
+        },
+        type: 'input',
+        name: 'officeNumber',
+        message: 'What is your office number?'
+    }
 ]
 
-inquirer.prompt( 
-    {
-    type: 'list',
-    name: 'role',
-    message: 'Choose your role: ',
-    choices: ['Manager', 'Engineer', 'Intern']
-    }
-)
-.then(function(data){
+inquirer.prompt(employeeQs)
+    // {
+    // type: 'list',
+    // name: 'role',
+    // message: 'Choose your role: ',
+    // choices: ['Manager', 'Engineer', 'Intern']
+    // }
+
+.then(function(answer){
     // if(data.role === 'Manager'){
     //     console.log('You chose: ', data.role);
     //     inquirer.prompt(managerQs).then(function(response){
@@ -155,6 +163,6 @@ inquirer.prompt(
     //     inquirer.prompt(internQs);
 
     // }
-
+    console.log('questions are done ', answer);
 })
 
