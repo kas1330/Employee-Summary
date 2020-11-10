@@ -82,34 +82,18 @@ const employeeQs = [
         message: 'What school do you attend?'
     }
 ]
+//Call create team after employeeQs is initialized
+createTeam();
 
-inquirer.prompt(employeeQs)
-    // {
-    // type: 'list',
-    // name: 'role',
-    // message: 'Choose your role: ',
-    // choices: ['Manager', 'Engineer', 'Intern']
-    // }
+function createTeam(){
+    inquirer.prompt(employeeQs)
 
-.then(function(answer){
-    // if(data.role === 'Manager'){
-    //     console.log('You chose: ', data.role);
-    //     inquirer.prompt(managerQs).then(function(response){
-    //         employeeList.push(response);
-    //         console.log(employeeList);
-    //     })
-    //     // console.log(employeeList);
-    // }
-    // if(data.role === 'Engineer'){
-    //     console.log('You chose: ', data.role);
-    //     inquirer.prompt(engineerQs);
 
-    // }
-    // if(data.role === 'Intern'){
-    //     console.log('You chose: ', data.role);
-    //     inquirer.prompt(internQs);
+    .then(function(answer){
+    
+        console.log('questions are done ', answer);
+    })
+}
 
-    // }
-    console.log('questions are done ', answer);
-})
+
 
