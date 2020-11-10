@@ -9,6 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const { choices } = require("yargs");
 
 
 // Write code to use inquirer to gather information about the development team members,
@@ -33,8 +34,11 @@ const render = require("./lib/htmlRenderer");
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+
+//Empty array, employees are to be added to it as their info is added
 const employeeList = [];
 
+//All questions
 const employeeQs = [
     {
         type: 'list',
@@ -80,7 +84,14 @@ const employeeQs = [
         type: 'input',
         name: 'school',
         message: 'What school do you attend?'
+    },
+    {
+    type: 'list',
+    name: 'addPerson',
+    message: 'Would you like to add someone else?',
+    choices: ['Yes', 'No']
     }
+
 ]
 //Call create team after employeeQs is initialized
 createTeam();
@@ -88,10 +99,10 @@ createTeam();
 function createTeam(){
     inquirer.prompt(employeeQs)
 
-
     .then(function(answer){
-    
+        
         console.log('questions are done ', answer);
+        employeeList.push(answer);
     })
 }
 
