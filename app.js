@@ -106,9 +106,12 @@ function createTeam(){
         if(answer.addPerson === 'Yes'){
             createTeam();
         }
-
-        console.log(employeeList);
+        // console.log(employeeList);
+        console.log('Broke out of the if statement');
     })
+    //Passing it an array of objects, I think the render function does employeeList[0].getRole() and that's why it's not working
+    const renderVar = render(employeeList);
+
 }
 
 
