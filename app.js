@@ -35,53 +35,82 @@ const render = require("./lib/htmlRenderer");
 // for the provided `render` function to work! ```
 const employeeList = [];
 
-const managerQs = [
-    {
-    type: 'input',
-    name: 'name',
-    message: 'What is your name?'
-    },
-    {
-    type: 'input',
-    name: 'id',
-    message: 'What is your id?'
-    },
-    {
-    type: 'input',
-    name: 'email',
-    message: 'What is your email?'
-    },
-    {
-    type: 'input',
-    name: 'officeNumber',
-    message: 'What is your office number?'
-    }
-]
+// const managerQs = [
+//     {
+//     type: 'input',
+//     name: 'name',
+//     message: 'What is your name?'
+//     },
+//     {
+//     type: 'input',
+//     name: 'id',
+//     message: 'What is your id?'
+//     },
+//     {
+//     type: 'input',
+//     name: 'email',
+//     message: 'What is your email?'
+//     },
+//     {
+//     type: 'input',
+//     name: 'officeNumber',
+//     message: 'What is your office number?'
+//     }
+// ]
 
-const engineerQs = [
-    {
-    type: 'input',
-    name: 'name',
-    message: 'What is your name?'
-    },
-    {
-    type: 'input',
-    name: 'id',
-    message: 'What is your id?'
-    },
-    {
-    type: 'input',
-    name: 'email',
-    message: 'What is your email?'
-    },
-    {
-    type: 'input',
-    name: 'github',
-    message: 'What is your gitHub?'
-    }
-]
+// const engineerQs = [
+//     {
+//     type: 'input',
+//     name: 'name',
+//     message: 'What is your name?'
+//     },
+//     {
+//     type: 'input',
+//     name: 'id',
+//     message: 'What is your id?'
+//     },
+//     {
+//     type: 'input',
+//     name: 'email',
+//     message: 'What is your email?'
+//     },
+//     {
+//     type: 'input',
+//     name: 'github',
+//     message: 'What is your gitHub?'
+//     }
+// ]
 
-const internQs = [
+// const internQs = [
+//     {
+//     type: 'input',
+//     name: 'name',
+//     message: 'What is your name?'
+//     },
+//     {
+//     type: 'input',
+//     name: 'id',
+//     message: 'What is your id?'
+//     },
+//     {
+//     type: 'input',
+//     name: 'email',
+//     message: 'What is your email?'
+//     },
+//     {
+//     type: 'input',
+//     name: 'school',
+//     message: 'What is your school?'
+//     }
+// ]
+
+const employeeQs = [
+    {
+        type: 'list',
+        name: 'role',
+        message: 'Choose your role: ',
+        choices: ['Manager', 'Engineer', 'Intern']
+    },
     {
     type: 'input',
     name: 'name',
@@ -97,11 +126,6 @@ const internQs = [
     name: 'email',
     message: 'What is your email?'
     },
-    {
-    type: 'input',
-    name: 'school',
-    message: 'What is your school?'
-    }
 ]
 
 inquirer.prompt( 
@@ -113,24 +137,24 @@ inquirer.prompt(
     }
 )
 .then(function(data){
-    if(data.role === 'Manager'){
-        console.log('You chose: ', data.role);
-        inquirer.prompt(managerQs).then(function(response){
-            employeeList.push(response);
-            console.log(employeeList);
-        })
-        // console.log(employeeList);
-    }
-    if(data.role === 'Engineer'){
-        console.log('You chose: ', data.role);
-        inquirer.prompt(engineerQs);
+    // if(data.role === 'Manager'){
+    //     console.log('You chose: ', data.role);
+    //     inquirer.prompt(managerQs).then(function(response){
+    //         employeeList.push(response);
+    //         console.log(employeeList);
+    //     })
+    //     // console.log(employeeList);
+    // }
+    // if(data.role === 'Engineer'){
+    //     console.log('You chose: ', data.role);
+    //     inquirer.prompt(engineerQs);
 
-    }
-    if(data.role === 'Intern'){
-        console.log('You chose: ', data.role);
-        inquirer.prompt(internQs);
+    // }
+    // if(data.role === 'Intern'){
+    //     console.log('You chose: ', data.role);
+    //     inquirer.prompt(internQs);
 
-    }
-    
+    // }
+
 })
 
