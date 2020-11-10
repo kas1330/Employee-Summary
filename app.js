@@ -133,6 +133,22 @@ const employeeQs = [
         type: 'input',
         name: 'officeNumber',
         message: 'What is your office number?'
+    },
+    {
+        when: answer => {
+            return answer.role === 'Engineer'
+        },
+        type: 'input',
+        name: 'github',
+        message: 'What is your gitHub account?'
+    },
+    {
+        when: answer => {
+            return answer.role === 'Intern'
+        },
+        type: 'input',
+        name: 'school',
+        message: 'What school do you attend?'
     }
 ]
 
