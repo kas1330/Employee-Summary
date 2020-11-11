@@ -14,7 +14,6 @@ const { choices } = require("yargs");
 
 //Empty array, employees are to be added to it as their info is added
 const employeeList = [];
-// var renderVar = '';
 
 //All questions
 const employeeQs = [
@@ -71,28 +70,17 @@ const employeeQs = [
     }
 
 ]
+
 //Call create team after employeeQs is initialized
 createTeam();
 
+//Call writeToFile when answer.addPerson === No
 function createTeam(){
     inquirer.prompt(employeeQs)
 
     .then(function(answer){
         createObject(answer);
-        // console.log('questions are done ', answer);
-        // employeeList.push(answer);
-        // if(answer.role === 'Manager'){
-        //     var newPerson = new Manager(answer.name, answer.id, answer.email, answer.officeNumber);
-        //     employeeList.push(newPerson);
-        // }
-        // else if(answer.role === 'Engineer'){
-        //     var newPerson = new Engineer(answer.name, answer.id, answer.email, answer.github);
-        //     employeeList.push(newPerson);
-        // }
-        // else if(answer.role === 'Intern'){
-        //     var newPerson = new Intern(answer.name, answer.id, answer.email, answer.school);
-        //     employeeList.push(newPerson);
-        // }
+
         if(answer.addPerson === 'Yes'){
             createTeam();
         }
@@ -102,13 +90,8 @@ function createTeam(){
             writeToFile('employeeFile.html', renderVar);
         }
 
-        // console.log(employeeList);
-        // console.log('Broke out of the if statement');
     })
-    //Passing it an array of objects, I think the render function does employeeList[0].getRole() and that's why it's not working
-    // const renderVar = render(employeeList);
-    // console.log('Inside create team, after renderVar');
-    // writeToFile('employeeFile.html', renderVar);
+
 }
 
 function createObject(answer){
