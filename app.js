@@ -26,17 +26,17 @@ const employeeQs = [
     {
     type: 'input',
     name: 'name',
-    message: 'What is your name?'
+    message: 'Enter a name:'
     },
     {
     type: 'input',
     name: 'id',
-    message: 'What is your id?'
+    message: 'Enter an id:'
     },
     {
     type: 'input',
     name: 'email',
-    message: 'What is your email?'
+    message: 'Enter an email:'
     },
     {
         when: answer => {
@@ -44,7 +44,7 @@ const employeeQs = [
         },
         type: 'input',
         name: 'officeNumber',
-        message: 'What is your office number?'
+        message: 'Enter their office number:'
     },
     {
         when: answer => {
@@ -52,7 +52,7 @@ const employeeQs = [
         },
         type: 'input',
         name: 'github',
-        message: 'What is your gitHub account?'
+        message: 'Enter their gitHub user name:'
     },
     {
         when: answer => {
@@ -60,7 +60,7 @@ const employeeQs = [
         },
         type: 'input',
         name: 'school',
-        message: 'What school do you attend?'
+        message: 'Enter their school:'
     },
     {
     type: 'list',
@@ -107,7 +107,6 @@ function createObject(answer){
         var newPerson = new Intern(answer.name, answer.id, answer.email, answer.school);
         employeeList.push(newPerson);
     }
-    // console.log(employeeList);
 
     return;
 }
