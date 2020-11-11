@@ -71,7 +71,7 @@ const employeeQs = [
 
 ]
 
-//Call create team after employeeQs is initialized
+// Call create team after employeeQs is initialized
 createTeam();
 
 //Call writeToFile when answer.addPerson === No
@@ -87,7 +87,7 @@ function createTeam(){
         else{
             let renderVar = render(employeeList);
             console.log('Inside create team, after renderVar');
-            writeToFile('employeeFile.html', renderVar);
+            writeToFile('employeeFileDemo.html', renderVar);
         }
 
     })
@@ -107,7 +107,7 @@ function createObject(answer){
         var newPerson = new Intern(answer.name, answer.id, answer.email, answer.school);
         employeeList.push(newPerson);
     }
-    console.log(employeeList);
+    // console.log(employeeList);
 
     return;
 }
