@@ -25,6 +25,8 @@
 
 - [Questions](https://github.com/kas1330/Employee-Summary#questions)
 
+- [Repo](https://github.com/kas1330/Employee-Summary#repo)
+
 - [Demonstration](https://github.com/kas1330/Employee-Summary#demonstration)
 
 ## Installation
