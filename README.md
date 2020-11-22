@@ -8,24 +8,24 @@
 ## Table of Contents
 
 
-- [Installation](##Installation)
+- [Installation](https://github.com/kas1330/Employee-Summary#installation)
 
 
-- [Usage](##Usage)
+- [Usage](https://github.com/kas1330/Employee-Summary#usage)
 
 
-- [License](##License)
+- [License](https://github.com/kas1330/Employee-Summary#license)
 
 
-- [Contributions](##Contributions)
+- [Contributions](https://github.com/kas1330/Employee-Summary#contributions)
 
 
-- [Testing](##Testing)
+- [Testing](https://github.com/kas1330/Employee-Summary#testing)
 
 
-- [Questions](##Questions)
+- [Questions](https://github.com/kas1330/Employee-Summary#questions)
 
-- [Demonstration](##Demonstration)
+- [Demonstration](https://github.com/kas1330/Employee-Summary#demonstration)
 
 ## Installation
 
